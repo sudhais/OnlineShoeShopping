@@ -47,6 +47,8 @@ class itemAdapter(val itemlist: ArrayList<Shoe_item>, context: Context): Recycle
 
 //        val imgid = holder.btnCart.drawable
 //        Log.e("111", "${imgid}")
+
+        //do when click the cart button
         holder.btnCart.setOnClickListener{
             val repository = userRepo(userDatabase.getInstance(context))
             val cart = Cart(0,currentItem.name,currentItem.image,currentItem.price.toDouble(),1,currentItem.price.toDouble())
@@ -55,7 +57,9 @@ class itemAdapter(val itemlist: ArrayList<Shoe_item>, context: Context): Recycle
             CoroutineScope(Dispatchers.IO).launch {
                 repository.addCart(cart)
             }
+            // change the cart icon
             holder.btnCart.setImageResource(R.drawable.selected_cart)
+            //display toast message
             Toast.makeText(context,"Successfully added to the Cart", Toast.LENGTH_LONG).show()
 
 //            if(holder.btnCart.id == R.drawable.selected_cart){

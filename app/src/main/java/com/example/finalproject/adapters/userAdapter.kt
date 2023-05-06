@@ -78,11 +78,15 @@ class userAdapter(): RecyclerView.Adapter<userAdapter.ViewHolder>() {
         holder.username.text = currentUser.username
         holder.password.text = currentUser.password
 
+        //delete the user when clicking the delete button
         holder.btnDelete.setOnClickListener{
             val repository = userRepo(userDatabase.getInstance(context))
+            //change the button when click the delete button
             holder.btnDelete.setImageResource(R.drawable.clicked_delete_image)
             CoroutineScope(Dispatchers.IO).launch {
                 repository.deleteUser(data[position])
+
+                //read all users after delete the user
                 val data = repository.readAllUsers()
                 withContext(Dispatchers.Main){
                     setData(data,context)

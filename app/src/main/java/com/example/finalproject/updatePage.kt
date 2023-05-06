@@ -34,6 +34,7 @@ class updatePage : AppCompatActivity() {
 
         val repository = userRepo(userDatabase.getInstance(this))
 
+        //get the user details from userID
         CoroutineScope(Dispatchers.IO).launch {
             user = repository.getUserById(id)
             Log.e("0001", "${user}")
@@ -44,8 +45,8 @@ class updatePage : AppCompatActivity() {
             txtPassword.setText(user.password)
         }
 
+        //update the details when click the update button
         btnUpdate.setOnClickListener {
-
 
             val userUp = User(
                 user.id,
@@ -56,6 +57,7 @@ class updatePage : AppCompatActivity() {
                 txtPassword.text.toString()
             )
 
+            //update user details into user_table
             CoroutineScope(Dispatchers.IO).launch{
                 repository.updateUser(userUp)
                 Log.e("0011", "${userUp}")

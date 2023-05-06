@@ -26,6 +26,7 @@ class Home : AppCompatActivity() {
         newRecyclerView.layoutManager = LinearLayoutManager(this)
         newRecyclerView.setHasFixedSize(true)
 
+        //set the shoe details in arrayList
         newArrayList = arrayListOf<Shoe_item>()
         newArrayList.add(Shoe_item(R.drawable.adidas,"addidas","2600"))
         newArrayList.add(Shoe_item(R.drawable.shoe10, "Sketchers", "2333"))

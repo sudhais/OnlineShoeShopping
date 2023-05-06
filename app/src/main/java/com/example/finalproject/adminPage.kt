@@ -37,6 +37,7 @@ class adminPage : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(ui)
 
 
+        //read all user details from user_table
         CoroutineScope(Dispatchers.IO).launch {
             val data = repository.readAllUsers()
             //recyclerView.adapter=userAdapter(data)
@@ -53,10 +54,12 @@ class adminPage : AppCompatActivity() {
 
         }
 
+        //diplay dialog box
         btnUpdate.setOnClickListener{
             displayDialog()
         }
 
+        //logout and redirect to the login page
         btnLogout.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -65,6 +68,7 @@ class adminPage : AppCompatActivity() {
 
     }
 
+    //dialog box implementations
     private fun displayDialog() {
 
         //create new instance of AlertDialog.Builder

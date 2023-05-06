@@ -11,6 +11,7 @@ class registerForm(
 
 ) {
 
+    //validate the name
     fun validateName():validateForm{
         return if(name.isEmpty()){
             validateForm.Empty("Name is empty")
@@ -21,6 +22,7 @@ class registerForm(
         }
     }
 
+    //validate the email
     fun validateEmail():validateForm{
         val emailRegex = "^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+\$"
         return if(email.isEmpty()){
@@ -32,6 +34,7 @@ class registerForm(
         }
     }
 
+    //validate the phone number
     fun validatePhoneNo():validateForm{
         return if(phoneNo.isEmpty()) {
             validateForm.Empty("phone no is empty")
@@ -45,6 +48,7 @@ class registerForm(
 
     }
 
+    //validate username
     fun validateUsername():validateForm{
         return if(username.isEmpty()){
             validateForm.Empty("Username is empty")
@@ -55,6 +59,7 @@ class registerForm(
         }
     }
 
+    //validate the password
     fun validatePassword():validateForm{
         return if(password.isEmpty()){
             validateForm.Empty("password is empty")

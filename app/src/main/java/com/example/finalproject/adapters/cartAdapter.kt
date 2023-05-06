@@ -62,9 +62,9 @@ class cartAdapter: RecyclerView.Adapter<cartAdapter.MyViewHolder>(){
         holder.totPrice.text = currentItem.totPrice.toString()
 
         val repository = userRepo(userDatabase.getInstance(context))
+
+        //delete the shoe from cart page when click the delete button
         holder.btnDelete.setOnClickListener{
-
-
             CoroutineScope(Dispatchers.IO).launch {
                 repository.deleteCart(data[position])
                 val data = repository.readAllCart()
@@ -75,6 +75,7 @@ class cartAdapter: RecyclerView.Adapter<cartAdapter.MyViewHolder>(){
             Toast.makeText(context,"Successfully Deleted from cart ", Toast.LENGTH_LONG).show()
         }
 
+        //add quantity when click the plus button
         holder.btnPlus.setOnClickListener{
             var quan = currentItem.quanity
             CoroutineScope(Dispatchers.IO).launch{
@@ -89,6 +90,7 @@ class cartAdapter: RecyclerView.Adapter<cartAdapter.MyViewHolder>(){
             }
         }
 
+        //add quantity when click the minus button
         holder.btnMinus.setOnClickListener{
             var quan = currentItem.quanity
             if(currentItem.quanity > 0) {

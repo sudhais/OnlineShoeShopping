@@ -45,6 +45,7 @@ class register : AppCompatActivity() {
         password = findViewById(R.id.edtPassword)
         val back:Button = findViewById(R.id.buttonBack)
 
+        //redirect to the login page when click the back button
         back.setOnClickListener{
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
@@ -54,16 +55,16 @@ class register : AppCompatActivity() {
         //mUserViewModel = ViewModelProvider(this).get(userViewModel::class.java)
     }
 
-    fun displayAlert(title:String, message:String){
-        val builder = AlertDialog.Builder(this)
-        builder.setTitle(title)
-        builder.setMessage(message)
-        builder.setPositiveButton("OK") { dialog, which ->
-            // Do something when the "OK" button is clicked
-        }
-        val dialog = builder.create()
-        dialog.show()
-    }
+//    fun displayAlert(title:String, message:String){
+//        val builder = AlertDialog.Builder(this)
+//        builder.setTitle(title)
+//        builder.setMessage(message)
+//        builder.setPositiveButton("OK") { dialog, which ->
+//            // Do something when the "OK" button is clicked
+//        }
+//        val dialog = builder.create()
+//        dialog.show()
+//    }
 
     fun submit(v:View){
         val Form =  registerForm(
@@ -151,7 +152,7 @@ class register : AppCompatActivity() {
                 username.text.toString(),
                 password.text.toString()
             )
-
+            //add the user into user_table
             CoroutineScope(Dispatchers.IO).launch {
                 repository.addUser(user)
                 Log.e("112233", "${user}")

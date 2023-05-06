@@ -37,19 +37,23 @@ class CartPage : AppCompatActivity() {
         newRecyclerView.layoutManager = LinearLayoutManager(this)
         //newRecyclerView.setHasFixedSize(true)
 
+        //read all cart details from cart_table
         CoroutineScope(Dispatchers.IO).launch {
             var totPrice:Double = 0.0
             val data = repository.readAllCart()
             Log.e("1234", "${data}")
             adapter.setData(data,ui)
 
+            //calculate the total price from getting all cart shoe total price
             for(i in 0 until data.size){
                 totPrice += data[i].totPrice
             }
+            //set the total price
             totalPrice.setText(totPrice.toString())
             Log.e("1122333", "${totalPrice.text}")
         }
 
+        //redirect home page
         btnHome.setOnClickListener{
             intent = Intent(this, Home::class.java)
             startActivity(intent)
