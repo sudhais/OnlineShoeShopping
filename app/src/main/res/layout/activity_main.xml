@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/img"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="@string/logtitle"
+        app:titleMarginStart="160dp" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="378dp"
+        android:layout_height="46dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:paddingStart="16dp"
+        android:text="@string/labelUName"
+        android:textColor="@color/darkblack"
+        android:textSize="@dimen/formtextsize" />
+
+    <EditText
+        android:id="@+id/editPersonName"
+        android:layout_width="379dp"
+        android:layout_height="66dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="@string/edtUName"
+        android:inputType="textPersonName"
+        android:paddingStart="16dp"
+        android:textSize="@dimen/formtextsize" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="379dp"
+        android:layout_height="46dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:paddingStart="16dp"
+        android:text="@string/labelPassword"
+        android:textColor="@color/darkblack"
+        android:textSize="@dimen/formtextsize" />
+
+    <EditText
+        android:id="@+id/ediPassword1"
+        android:layout_width="387dp"
+        android:layout_height="65dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/white"
+        android:backgroundTint="@color/white"
+        android:ems="10"
+        android:hint="@string/edtPassword"
+        android:paddingStart="16dp"
+        android:textSize="@dimen/formtextsize" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="381dp"
+        android:layout_height="64dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/btnloginUser" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:backgroundTint="@color/adminLigin"
+        android:text="@string/btnloginAd" />
+
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:backgroundTint="@color/headerColor"
+        android:text="@string/btncreate" />
+
+</LinearLayout>
