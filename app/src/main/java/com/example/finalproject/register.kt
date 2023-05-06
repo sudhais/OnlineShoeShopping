@@ -141,7 +141,7 @@ class register : AppCompatActivity() {
         }
 
         if(valid == 5){
-            displayAlert("success", "successfully registered")
+            //displayAlert("success", "successfully registered")
 
             val user = User(
                 0,

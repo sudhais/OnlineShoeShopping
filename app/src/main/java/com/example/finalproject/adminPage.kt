@@ -71,7 +71,7 @@ class adminPage : AppCompatActivity() {
         val builder = AlertDialog.Builder(this)
 
         //set alert dialog title and the message
-        builder.setTitle("Enter User ID:")
+        builder.setTitle("Enter User ID to Update:")
         builder.setMessage("Enter the User ID below:")
 
         //create an EditText input field
