@@ -93,6 +93,7 @@ class cartAdapter: RecyclerView.Adapter<cartAdapter.MyViewHolder>(){
         //add quantity when click the minus button
         holder.btnMinus.setOnClickListener{
             var quan = currentItem.quanity
+            //check quantity is greater than 0
             if(currentItem.quanity > 0) {
                 CoroutineScope(Dispatchers.IO).launch{
                     quan--
