@@ -46,11 +46,6 @@ class adminPage : AppCompatActivity() {
 
 
 
-           // runOnUiThread{
-                //adapter.setData(data,this@adminPage)
-            //}
-
-            //repository.readAllUsers()
 
         }
 
