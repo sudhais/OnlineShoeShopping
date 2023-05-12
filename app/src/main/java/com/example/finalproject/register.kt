@@ -153,6 +153,7 @@ class register : AppCompatActivity() {
                 password.text.toString()
             )
             //add the user into user_table
+
             CoroutineScope(Dispatchers.IO).launch {
                 repository.addUser(user)
                 Log.e("112233", "${user}")

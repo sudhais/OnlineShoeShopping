@@ -11,6 +11,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.finalproject.adapters.userAdapter
+import com.example.finalproject.database.entities.User
 import com.example.finalproject.database.repositories.userRepo
 import com.example.finalproject.database.userDatabase
 import kotlinx.coroutines.CoroutineScope
@@ -19,7 +20,11 @@ import kotlinx.coroutines.launch
 
 class adminPage : AppCompatActivity() {
 
+    //declaring variable
     lateinit var btnUpdate:Button
+    lateinit var recyclerView:RecyclerView
+    lateinit var data:List<User>
+    lateinit var adapter: userAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,17 +34,17 @@ class adminPage : AppCompatActivity() {
         val btnLogout = findViewById<Button>(R.id.btnBack)
 
         val repository = userRepo(userDatabase.getInstance(this))
-        val recyclerView: RecyclerView = findViewById(R.id.userRecycle)
+        recyclerView = findViewById(R.id.userRecycle)
         //recyclerView.setHasFixedSize(true)
         val ui = this
-        val adapter = userAdapter()
+        adapter = userAdapter()
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(ui)
 
 
         //read all user details from user_table
         CoroutineScope(Dispatchers.IO).launch {
-            val data = repository.readAllUsers()
+            data = repository.readAllUsers()
             //recyclerView.adapter=userAdapter(data)
             Log.e("000", "${data}")
             adapter.setData(data,ui)
